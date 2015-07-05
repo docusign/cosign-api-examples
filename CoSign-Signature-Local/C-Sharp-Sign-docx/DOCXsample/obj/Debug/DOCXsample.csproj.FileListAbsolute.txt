@@ -1,0 +1,11 @@
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\Interop.SAPILib.dll
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.csproj.ResolveComReference.cache
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\bin\Debug\DOCXsample.exe
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\bin\Debug\DOCXsample.pdb
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\bin\Debug\Interop.SAPILib.dll
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.Form1.resources
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.Properties.Resources.resources
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.csproj.GenerateResource.Cache
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.exe
+C:\Users\yigalm\Desktop\Pre Sale\Developers Portal\Code Samples\C# DOCX Sign\DOCXsample\obj\Debug\DOCXsample.pdb
