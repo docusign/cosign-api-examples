@@ -1,0 +1,45 @@
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.exe
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.pdb
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe.config
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.pdb
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.frmMain.resources
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.Properties.Resources.resources
+C:\Documents and Settings\jack\Desktop\WS C# PDF Sign\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.csproj.GenerateResource.Cache
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.frmMain.resources
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.Properties.Resources.resources
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.csproj.GenerateResource.Cache
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe.config
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe.config
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.frmMain.resources
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.Properties.Resources.resources
+C:\DEV\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.csproj.GenerateResource.Cache
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe.config
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.pdb
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\ResolveAssemblyReference.cache
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.frmMain.resources
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.Properties.Resources.resources
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.csproj.GenerateResource.Cache
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.exe
+X:\API-Integration with CoSign\WS C# PDF Sign TSA-OCSP\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.pdb
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe.config
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.exe
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.pdb
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.exe
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\bin\Debug\SAPIWS_Sample.pdb
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\ResolveAssemblyReference.cache
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.frmMain.resources
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.Properties.Resources.resources
+N:\Projects\KnowledgeBase\Code Samples\Web Services\SPML\WS C# TSA+OCSP+GET USERS\SAPIWS_Sample\obj\Debug\SAPIWS_Sample.csproj.GenerateResource.Cache

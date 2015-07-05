@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://arx.com/SAPIWS/SPML/1.0" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arx.com/SAPIWS/SPML/1.0/" xmlns:s4="urn:oasis:names:tc:SPML:2:0:password" xmlns:s1="urn:oasis:names:tc:SPML:2:0" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="urn:oasis:names:tc:SPML:2:0:search" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://arx.com/SAPIWS/SPML/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://arx.com/SAPIWS/SPML/1.0/">
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0" />
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0:password" />
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0:search" />
+      <s:element name="listTargets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:listTargetsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listTargetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:listTargetsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:addRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:addResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:addRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:addResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:lookupRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:lookupResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lookupGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:lookupRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lookupGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:lookupResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:modifyRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:modifyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:modifyRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:modifyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:setPasswordRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="expirePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:expirePasswordRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="expirePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:resetPasswordRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:resetPasswordResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:validatePasswordRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s4:validatePasswordResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:searchRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:searchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:searchRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:searchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iterate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:iterateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iterateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:searchResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeIterator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s2:closeIteratorRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeIteratorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:deleteResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SPML:2:0">
+      <s:import namespace="http://arx.com/SAPIWS/SPML/1.0" />
+      <s:element name="listTargetsRequest" type="s1:ListTargetsRequestType" />
+      <s:complexType name="ListTargetsRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:attribute name="profile" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:CoSignLogonData" />
+            </s:sequence>
+            <s:attribute name="requestID" type="s:ID" />
+            <s:attribute name="executionMode" type="s1:ExecutionModeType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ExtensibleType">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:complexType name="ModificationType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="component" type="s1:SelectionType" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:UserRecord" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:GroupRecord" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capabilityData" type="s1:CapabilityDataType" />
+            </s:sequence>
+            <s:attribute name="modificationMode" type="s1:ModificationModeType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SelectionType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:QueryClauseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="namespacePrefixMap" type="s1:NamespacePrefixMappingType" />
+            </s:sequence>
+            <s:attribute name="path" type="s:string" />
+            <s:attribute name="namespaceURI" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="QueryClauseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NamespacePrefixMappingType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="prefix" type="s:string" />
+            <s:attribute name="namespace" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CapabilityDataType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="mustUnderstand" type="s:boolean" />
+            <s:attribute name="capabilityURI" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ModificationModeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="add" />
+          <s:enumeration value="replace" />
+          <s:enumeration value="delete" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="PSOIdentifierType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:IdentifierType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="containerID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+            <s:attribute name="targetID" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IdentifierType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="ID" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="errorMessage" type="s:string" />
+            </s:sequence>
+            <s:attribute name="status" type="s1:StatusCodeType" use="required" />
+            <s:attribute name="requestID" type="s:ID" />
+            <s:attribute name="error" type="s1:ErrorCode" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="StatusCodeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="success" />
+          <s:enumeration value="failure" />
+          <s:enumeration value="pending" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ErrorCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="malformedRequest" />
+          <s:enumeration value="unsupportedOperation" />
+          <s:enumeration value="unsupportedIdentifierType" />
+          <s:enumeration value="noSuchIdentifier" />
+          <s:enumeration value="customError" />
+          <s:enumeration value="unsupportedExecutionMode" />
+          <s:enumeration value="invalidContainment" />
+          <s:enumeration value="noSuchRequest" />
+          <s:enumeration value="unsupportedSelectionType" />
+          <s:enumeration value="resultSetToLarge" />
+          <s:enumeration value="unsupportedProfile" />
+          <s:enumeration value="invalidIdentifier" />
+          <s:enumeration value="alreadyExists" />
+          <s:enumeration value="containerNotEmpty" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="PSOType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:UserRecord" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:GroupRecord" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capabilityData" type="s1:CapabilityDataType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LookupResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="pso" type="s1:PSOType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ListTargetsResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="target" type="s1:TargetType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TargetType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="schema" type="s1:SchemaType" />
+              <s:element minOccurs="0" maxOccurs="1" name="capabilities" type="s1:CapabilitiesListType" />
+            </s:sequence>
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute name="profile" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SchemaType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="supportedSchemaEntity" type="s1:SchemaEntityRefType" />
+            </s:sequence>
+            <s:attribute name="ref" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SchemaEntityRefType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute name="entityName" type="s:string" />
+            <s:attribute name="isContainer" type="s:boolean" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CapabilitiesListType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capability" type="s1:CapabilityType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CapabilityType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="appliesTo" type="s1:SchemaEntityRefType" />
+            </s:sequence>
+            <s:attribute name="namespaceURI" type="s:anyURI" />
+            <s:attribute name="location" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AddResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="pso" type="s1:PSOType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ModifyResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="pso" type="s1:PSOType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ExecutionModeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="synchronous" />
+          <s:enumeration value="asynchronous" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="AddRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" name="containerID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:UserRecord" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:GroupRecord" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capabilityData" type="s1:CapabilityDataType" />
+            </s:sequence>
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute default="everything" name="returnData" type="s1:ReturnDataType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ReturnDataType">
+        <s:restriction base="s:string">
+          <s:enumeration value="identifier" />
+          <s:enumeration value="data" />
+          <s:enumeration value="everything" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ModifyRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="modification" type="s1:ModificationType" />
+            </s:sequence>
+            <s:attribute default="everything" name="returnData" type="s1:ReturnDataType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DeleteRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+            <s:attribute default="false" name="recursive" type="s:boolean" />
+            <s:attribute default="0" name="group_user_op" type="s:int" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LookupRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+            <s:attribute default="everything" name="returnData" type="s1:ReturnDataType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="listTargetsResponse" type="s1:ListTargetsResponseType" />
+      <s:element name="addRequest" type="s1:AddRequestType" />
+      <s:element name="addResponse" type="s1:AddResponseType" />
+      <s:element name="lookupRequest" type="s1:LookupRequestType" />
+      <s:element name="lookupResponse" type="s1:LookupResponseType" />
+      <s:element name="modifyRequest" type="s1:ModifyRequestType" />
+      <s:element name="modifyResponse" type="s1:ModifyResponseType" />
+      <s:element name="deleteRequest" type="s1:DeleteRequestType" />
+      <s:element name="deleteResponse" type="s1:ResponseType" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SPML:2:0:search">
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0" />
+      <s:complexType name="LogicalOperatorType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:QueryClauseType" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SearchQueryType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="basePsoID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute name="scope" type="s2:ScopeType" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ScopeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="pso" />
+          <s:enumeration value="oneLevel" />
+          <s:enumeration value="subTree" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="SearchResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="pso" type="s1:PSOType" />
+              <s:element minOccurs="0" maxOccurs="1" name="iterator" type="s2:ResultsIteratorType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResultsIteratorType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="ID" type="s:ID" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SearchRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="query" type="s2:SearchQueryType" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="includeDataForCapability" type="s:string" />
+            </s:sequence>
+            <s:attribute default="everything" name="returnData" type="s1:ReturnDataType" />
+            <s:attribute name="maxSelect" type="s:int" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IterateRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="iterator" type="s2:ResultsIteratorType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CloseIteratorRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="iterator" type="s2:ResultsIteratorType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="searchRequest" type="s2:SearchRequestType" />
+      <s:element name="searchResponse" type="s2:SearchResponseType" />
+      <s:element name="iterateRequest" type="s2:IterateRequestType" />
+      <s:element name="closeIteratorRequest" type="s2:CloseIteratorRequestType" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://arx.com/SAPIWS/SPML/1.0">
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0" />
+      <s:element name="UserRecord">
+        <s:complexType>
+          <s:complexContent mixed="false">
+            <s:extension base="s1:ExtensibleType">
+              <s:attribute name="UserLoginName" type="s:string" />
+              <s:attribute name="Password" type="s:string" />
+              <s:attribute name="UserCN" type="s:string" />
+              <s:attribute name="EmailAddress" type="s:string" />
+              <s:attribute name="RightsMask" type="s:unsignedInt" use="required" />
+              <s:attribute name="UserKind" type="s3:UserKindEnum" />
+              <s:attribute name="UpdateTime" type="s:dateTime" />
+              <s:attribute name="Guid" type="s:string" />
+              <s:attribute name="EnrollmentStatus" type="s3:EnrollmentStatusEnum" />
+              <s:attribute name="EnrollmentReason" type="s:unsignedInt" />
+              <s:attribute name="LoginStatus" type="s3:UserLoginEnum" />
+              <s:attribute name="Counter1" type="s:unsignedInt" />
+              <s:attribute name="Counter2" type="s:unsignedInt" />
+              <s:attribute name="Counter3" type="s:unsignedInt" />
+              <s:attribute name="UserCertStatus" type="s3:UserCertStatusEnum" />
+              <s:attribute name="CertRequestStatus" type="s3:PendingRequestStatusEnum" />
+              <s:attribute name="GroupName" type="s:string" />
+            </s:extension>
+          </s:complexContent>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="UserKindEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="User" />
+          <s:enumeration value="Group" />
+          <s:enumeration value="Computer" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="EnrollmentStatusEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="USER_ENROLLMENT_STATUS_DONT_CARE" />
+          <s:enumeration value="USER_ENROLLMENT_STATUS_NONE" />
+          <s:enumeration value="USER_ENROLLMENT_STATUS_NEW" />
+          <s:enumeration value="USER_ENROLLMENT_STATUS_RENEW" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="UserLoginEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="USER_LOGIN_STATUS_NONE" />
+          <s:enumeration value="USER_LOGIN_STATUS_ENABLED" />
+          <s:enumeration value="USER_LOGIN_STATUS_DISABLED" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="UserCertStatusEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="USER_CERT_STATUS_NONE" />
+          <s:enumeration value="USER_CERT_STATUS_EXIST" />
+          <s:enumeration value="USER_CERT_STATUS_NOT_EXIST" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="PendingRequestStatusEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="PENDING_REQUEST_STATUS_NONE" />
+          <s:enumeration value="PENDING_REQUEST_STATUS_SEND_CRQ" />
+          <s:enumeration value="PENDING_REQUEST_STATUS_APPROVE" />
+          <s:enumeration value="PENDING_REQUEST_STATUS_RETRIEVE_CERT" />
+          <s:enumeration value="PENDING_REQUEST_STATUS_REVOKE" />
+          <s:enumeration value="PENDING_REQUEST_STATUS_ALL" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GroupRecord">
+        <s:complexType>
+          <s:complexContent mixed="false">
+            <s:extension base="s1:ExtensibleType">
+              <s:attribute name="GroupName" type="s:string" />
+              <s:attribute name="Address" type="s:string" />
+              <s:attribute name="PhoneNumber" type="s:string" />
+              <s:attribute name="Country" type="s:string" />
+              <s:attribute name="DomainName" type="s:string" />
+              <s:attribute name="OrganizationName" type="s:string" />
+              <s:attribute name="OrganizationUnitName" type="s:string" />
+              <s:attribute name="KeySize" type="s3:GroupKeySizeEnum" />
+              <s:attribute name="GroupStatus" type="s3:GroupStatusEnum" />
+              <s:attribute name="PackagesMask" type="s:unsignedInt" />
+              <s:attribute name="FlagsMask" type="s:unsignedInt" />
+            </s:extension>
+          </s:complexContent>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="GroupKeySizeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="GROUP_DEFAULT_KEY" />
+          <s:enumeration value="GROUP_NO_KEY" />
+          <s:enumeration value="GROUP_KEY_1024" />
+          <s:enumeration value="GROUP_KEY_2048" />
+          <s:enumeration value="GROUP_KEY_4096" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="GroupStatusEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="GROUP_STATUS_NONE" />
+          <s:enumeration value="GROUP_STATUS_ENABLED" />
+          <s:enumeration value="GROUP_STATUS_DISABLED" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CoSignLogonData">
+        <s:complexType>
+          <s:complexContent mixed="false">
+            <s:extension base="s1:ExtensibleType">
+              <s:attribute name="User" type="s:string" />
+              <s:attribute name="Password" type="s:string" />
+              <s:attribute name="Domain" type="s:string" />
+            </s:extension>
+          </s:complexContent>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SPML:2:0:password">
+      <s:import namespace="urn:oasis:names:tc:SPML:2:0" />
+      <s:complexType name="ResetPasswordResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValidatePasswordResponseType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ResponseType">
+            <s:attribute name="valid" type="s:boolean" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SetPasswordRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="currentPassword" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ExpirePasswordRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+            <s:attribute default="1" name="remainingLogins" type="s:int" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResetPasswordRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValidatePasswordRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="setPasswordRequest" type="s4:SetPasswordRequestType" />
+      <s:element name="expirePasswordRequest" type="s4:ExpirePasswordRequestType" />
+      <s:element name="resetPasswordRequest" type="s4:ResetPasswordRequestType" />
+      <s:element name="resetPasswordResponse" type="s4:ResetPasswordResponseType" />
+      <s:element name="validatePasswordRequest" type="s4:ValidatePasswordRequestType" />
+      <s:element name="validatePasswordResponse" type="s4:ValidatePasswordResponseType" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listTargetsSoapIn">
+    <wsdl:part name="parameters" element="tns:listTargets" />
+  </wsdl:message>
+  <wsdl:message name="listTargetsSoapOut">
+    <wsdl:part name="parameters" element="tns:listTargetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSoapIn">
+    <wsdl:part name="parameters" element="tns:add" />
+  </wsdl:message>
+  <wsdl:message name="addSoapOut">
+    <wsdl:part name="parameters" element="tns:addResponse" />
+  </wsdl:message>
+  <wsdl:message name="addGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:addGroup" />
+  </wsdl:message>
+  <wsdl:message name="addGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:addGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupSoapIn">
+    <wsdl:part name="parameters" element="tns:lookup" />
+  </wsdl:message>
+  <wsdl:message name="lookupSoapOut">
+    <wsdl:part name="parameters" element="tns:lookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:lookupGroup" />
+  </wsdl:message>
+  <wsdl:message name="lookupGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:lookupGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifySoapIn">
+    <wsdl:part name="parameters" element="tns:modify" />
+  </wsdl:message>
+  <wsdl:message name="modifySoapOut">
+    <wsdl:part name="parameters" element="tns:modifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyGroup" />
+  </wsdl:message>
+  <wsdl:message name="modifyGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="deleteGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:setPassword" />
+  </wsdl:message>
+  <wsdl:message name="setPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:setPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="expirePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:expirePassword" />
+  </wsdl:message>
+  <wsdl:message name="expirePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:expirePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:resetPassword" />
+  </wsdl:message>
+  <wsdl:message name="resetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:resetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="validatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:validatePassword" />
+  </wsdl:message>
+  <wsdl:message name="validatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:validatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchSoapIn">
+    <wsdl:part name="parameters" element="tns:search" />
+  </wsdl:message>
+  <wsdl:message name="searchSoapOut">
+    <wsdl:part name="parameters" element="tns:searchResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:searchGroups" />
+  </wsdl:message>
+  <wsdl:message name="searchGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:searchGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iterateSoapIn">
+    <wsdl:part name="parameters" element="tns:iterate" />
+  </wsdl:message>
+  <wsdl:message name="iterateSoapOut">
+    <wsdl:part name="parameters" element="tns:iterateResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeIteratorSoapIn">
+    <wsdl:part name="parameters" element="tns:closeIterator" />
+  </wsdl:message>
+  <wsdl:message name="closeIteratorSoapOut">
+    <wsdl:part name="parameters" element="tns:closeIteratorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SPMLSoap">
+    <wsdl:operation name="listTargets">
+      <wsdl:input message="tns:listTargetsSoapIn" />
+      <wsdl:output message="tns:listTargetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:addSoapIn" />
+      <wsdl:output message="tns:addSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addGroup">
+      <wsdl:input message="tns:addGroupSoapIn" />
+      <wsdl:output message="tns:addGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lookup">
+      <wsdl:input message="tns:lookupSoapIn" />
+      <wsdl:output message="tns:lookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lookupGroup">
+      <wsdl:input message="tns:lookupGroupSoapIn" />
+      <wsdl:output message="tns:lookupGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modify">
+      <wsdl:input message="tns:modifySoapIn" />
+      <wsdl:output message="tns:modifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyGroup">
+      <wsdl:input message="tns:modifyGroupSoapIn" />
+      <wsdl:output message="tns:modifyGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <wsdl:input message="tns:deleteGroupSoapIn" />
+      <wsdl:output message="tns:deleteGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setPassword">
+      <wsdl:input message="tns:setPasswordSoapIn" />
+      <wsdl:output message="tns:setPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="expirePassword">
+      <wsdl:input message="tns:expirePasswordSoapIn" />
+      <wsdl:output message="tns:expirePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <wsdl:input message="tns:resetPasswordSoapIn" />
+      <wsdl:output message="tns:resetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validatePassword">
+      <wsdl:input message="tns:validatePasswordSoapIn" />
+      <wsdl:output message="tns:validatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <wsdl:input message="tns:searchSoapIn" />
+      <wsdl:output message="tns:searchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchGroups">
+      <wsdl:input message="tns:searchGroupsSoapIn" />
+      <wsdl:output message="tns:searchGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iterate">
+      <wsdl:input message="tns:iterateSoapIn" />
+      <wsdl:output message="tns:iterateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeIterator">
+      <wsdl:input message="tns:closeIteratorSoapIn" />
+      <wsdl:output message="tns:closeIteratorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SPMLSoap" type="tns:SPMLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listTargets">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/listTargets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addGroup">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/addGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lookup">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/lookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lookupGroup">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/lookupGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modify">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyGroup">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/modifyGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/deleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPassword">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/setPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expirePassword">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/expirePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/resetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validatePassword">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/validatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGroups">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/searchGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iterate">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/iterate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeIterator">
+      <soap:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/closeIterator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SPMLSoap12" type="tns:SPMLSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listTargets">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/listTargets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addGroup">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/addGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lookup">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/lookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lookupGroup">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/lookupGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modify">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/modify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyGroup">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/modifyGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/deleteGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPassword">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/setPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expirePassword">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/expirePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/resetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validatePassword">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/validatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchGroups">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/searchGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iterate">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/iterate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeIterator">
+      <soap12:operation soapAction="http://arx.com/SAPIWS/SPML/1.0/closeIterator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SPML">
+    <wsdl:port name="SPMLSoap" binding="tns:SPMLSoap">
+      <soap:address location="https://prime.cosigntrial.com:8080/SAPIWS/spml.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SPMLSoap12" binding="tns:SPMLSoap12">
+      <soap12:address location="https://prime.cosigntrial.com:8080/SAPIWS/spml.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

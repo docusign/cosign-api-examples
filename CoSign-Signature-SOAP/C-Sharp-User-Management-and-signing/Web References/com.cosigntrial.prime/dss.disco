@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx?wsdl" docRef="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx" xmlns:q1="http://arx.com/SAPIWS/DSS/1.0/" binding="q1:DSSSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx" xmlns:q2="http://arx.com/SAPIWS/DSS/1.0/" binding="q2:DSSSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

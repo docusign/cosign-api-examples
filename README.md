@@ -17,5 +17,7 @@ For more information on the APIs, including Hello World examples and reference d
 - [C-Sharp-Annotate-and-sign-with-iTextSharp](https://github.com/docusign/CoSign-API-Examples/tree/master/CoSign-Signature-Local/C-Sharp-Annotate-and-sign-with-iTextSharp). Demonstrates how to annotate and sign a PDF using the iTextSharp library.
 
 ## CoSign Signature SOAP
-
- 
+- [C-Sharp-User-Management-and-signing](). Uses the CoSign Signature SOAP User Management API. Also demonstrates PDF signing.
+- [C-Sharp-Sign-PDF-with-Field-Locators](). Use signature Field Locators to sign a PDF file.
+- [Java-User-Management](). User Management API with Java NetBeans.
+- [Java-Sign-PDF-with-Field-Locators](). Use signature Field Locators to sign a PDF file.

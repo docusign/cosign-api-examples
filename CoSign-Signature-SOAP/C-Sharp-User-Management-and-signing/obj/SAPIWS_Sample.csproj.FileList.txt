@@ -1,0 +1,2 @@
+obj\Debug\SAPIWS_Sample.exe
+obj\Debug\SAPIWS_Sample.pdb

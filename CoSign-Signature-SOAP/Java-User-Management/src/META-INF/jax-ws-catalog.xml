@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://cosigndemo.arx.com:8080/SAPIWS/spml.asmx?WSDL" uri="wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl"/>
+    <system systemId="https://prime.cosigntrial.com:8080/SAPIWS/spml.asmx?WSDL" uri="wsdl/prime.cosigntrial.com_8080/SAPIWS/spml.asmx.wsdl"/>
+</catalog>

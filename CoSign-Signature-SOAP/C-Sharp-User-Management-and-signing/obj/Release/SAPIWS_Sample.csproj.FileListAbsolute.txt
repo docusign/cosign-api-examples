@@ -1,0 +1,11 @@
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Release\SAPIWS_Sample.exe.config
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Release\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Release\SAPIWS_Sample.XmlSerializers.dll
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\bin\Release\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\ResolveAssemblyReference.cache
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.frmMain.resources
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.Properties.Resources.resources
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.csproj.GenerateResource.Cache
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.exe
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.pdb
+C:\DEV\WS C# PDF Sign (VS 2008)\SAPIWS_Sample\obj\Release\SAPIWS_Sample.XmlSerializers.dll
