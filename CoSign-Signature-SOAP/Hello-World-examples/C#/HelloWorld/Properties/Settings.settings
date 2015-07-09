@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HelloWorld.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HelloWorld_com_cosigntrial_prime_DSS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://prime.cosigntrial.com:8080/sapiws/dss.asmx</Value>
+    </Setting>
+    <Setting Name="HelloWorld_SAPIWS_DSS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://prime.cosigntrial.com:8080/sapiws/dss.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
