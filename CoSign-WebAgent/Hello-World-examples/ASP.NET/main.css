@@ -1,0 +1,135 @@
+﻿body
+{
+    font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    background-image:url("Images/back.png");
+}
+
+#mainContainer
+{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#CSWAIFrame
+{
+    margin-top: 20px;
+    padding: 0;
+    width:841px;
+    height:777px;
+    overflow:hidden;
+    background-color:White;
+    border-radius:7px;
+    border:1px solid #CFCFCF;
+    box-shadow: 0px 0px 31px -4px #888;
+    float: right;
+}
+
+#leftForm
+{
+    float: left;
+    margin-top:200px;
+}
+
+#ViewFile
+{
+    display: block;
+    color: #484848;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#linkViewFile
+{
+    margin: 0 1px;
+    color: #484848;
+}
+#linkViewFile:visited
+{
+    color: #484848;
+}
+#linkViewFile:hover
+{
+	text-decoration: underline;
+}
+
+#CSWAConnectButton
+{
+    width: 200px;
+    margin-top: 20px;
+}
+
+.browseButton
+{
+    color: #484848;
+    border: solid 1px #7F7F7F;
+    text-shadow: 0 1px 0 white;
+    line-height: 23px;
+    padding: 2px;
+    background: #E1E1E1;
+    background: -webkit-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -moz-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -ms-linear-gradient(top, #f7f7f7, #d1d1d1);
+    background: -o-linear-gradient(top, #f7f7f7, #d1d1d1);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-size:13px;
+    font-weight:bold;
+}.browseButton:hover {
+    background: -webkit-linear-gradient(top, #ffffff, #dfdfdf);
+    background: -moz-linear-gradient(top, #ffffff, #dfdfdf);
+    background: -ms-linear-gradient(top, #ffffff, #dfdfdf);
+    background: -o-linear-gradient(top, #ffffff, #dfdfdf);
+}.browseButton:active {
+	border: solid 1px #7f7f7f;
+	background: #d0d0d0;
+	text-shadow: 0 1px 0 #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a8a8a8), color-stop(0.15, #c6c6c6), to(#d8d8d8));
+	background: -webkit-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+	background: -moz-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+	background: -ms-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+	background: -o-linear-gradient(top, #a8a8a8, #c6c6c6 15%, #d8d8d8);
+}
+
+#mainContainerFinishURL
+{
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+}
+
+#LabelResultMessage
+{
+    margin: 30px 0 10px;
+    display:block;
+    font-size: 20px;
+    color:Green;
+}
+
+.finishURLLogo
+{
+    width: 400px;
+    margin-top: 30px;
+}
+
+#linkToFirstPage
+{
+    margin-top: 20px;
+    display:inline-block;
+}
+
+#linkToFirstPage:visited
+{
+    color:#00E;
+}
+
+#linkToDoc
+{
+    text-align:left;
+}
+
+#StatusLabel
+{
+    color:Red;
+    margin-top: 10px;
+    display: block;
+}

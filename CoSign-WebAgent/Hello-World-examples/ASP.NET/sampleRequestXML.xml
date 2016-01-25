@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<request>
+  <Logic>
+    <allowAdHoc>true</allowAdHoc>
+    <workingMode>pull</workingMode>
+    <enforceReason>false</enforceReason>
+  </Logic>
+  <Url>
+    <finishURL>http://localhost:64956/retrieveSignedFile.aspx</finishURL>
+  </Url>
+  <Document>
+    <fileID>#uploadedFileID#</fileID>
+    <contentType>#uploadedFileContentType#</contentType>
+    <content>#uploadedFileContent#</content>
+  </Document>
+</request>
