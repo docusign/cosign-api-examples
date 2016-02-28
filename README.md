@@ -1,7 +1,7 @@
-# docusign-signature-appliance-api-examples
-DocuSign Signature Appliance: API Examples
+# docusign-signature-appliance-api-recipes
+DocuSign Signature Appliance: API Recipes
 
-The DocuSign Signature Appliance supports several optional APIs. This repo includes example programs for them.
+The DocuSign Signature Appliance supports several APIs. This repo includes example programs for them.
 
 For more information on the APIs, including Hello World examples and reference documentation, please contact your DocuSign Account Executive.
 
