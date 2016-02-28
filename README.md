@@ -1,4 +1,4 @@
-# docusign-signature-appliance-apl-examples
+# docusign-signature-appliance-api-examples
 DocuSign Signature Appliance: API Examples
 
 The DocuSign Signature Appliance supports several optional APIs. This repo includes example programs for them.
