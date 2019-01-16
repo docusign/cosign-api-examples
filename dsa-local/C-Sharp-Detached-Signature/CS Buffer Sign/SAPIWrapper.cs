@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
@@ -11,9 +8,7 @@ namespace CS_Buffer_Sign
 {
     public static class SAPIWrapper
     {
-
         private static object _SyncRoot = new object();
-
 
         //Checks if SAPI is initialized or not.
         private static bool isSAPIInitialized(SAPICrypt SAPI)
@@ -30,7 +25,7 @@ namespace CS_Buffer_Sign
         //Thread-Safe SAPIInit()
         private static void SAPIInit()
         {
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 
             lock (_SyncRoot)
             {
@@ -57,7 +52,6 @@ namespace CS_Buffer_Sign
             Stream SignatureData   //The stream to write the signature data to
             )
         {
-
             if (string.IsNullOrEmpty(Username)) throw new ArgumentNullException("Username");
             if (string.IsNullOrEmpty(Password)) throw new ArgumentNullException("Password");
             if (DataToSign == null) throw new ArgumentNullException("DataToSign");
@@ -67,7 +61,7 @@ namespace CS_Buffer_Sign
             SAPIInit();
 
             //Instantiate SAPI object
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 
             SESHandle hSes = null;
             int rc = 0;
@@ -87,7 +81,7 @@ namespace CS_Buffer_Sign
             }
 
             //Allocate new signing context
-            SAPIContext ctxBuffSign = new SAPIContextClass();
+            SAPIContext ctxBuffSign = new SAPIContext();
 
             if ((rc = SAPI.BufferSignInit (hSes, ctxBuffSign, 0)) != 0)
             {
@@ -96,7 +90,6 @@ namespace CS_Buffer_Sign
                 throw new Exception(string.Format(
                     "Failed to initialize buffer signing process(#{0})", rc.ToString("X")));
             }
-
 
             int remaining = (int)DataToSign.Length;
             
@@ -121,7 +114,7 @@ namespace CS_Buffer_Sign
                 if (read <= 0) throw new EndOfStreamException (String.Format("End of stream reached with {0} bytes left to read", remaining));
 
                 //Build SAPI-Compatible bytes array
-                SAPIByteArray tmpBuff = new SAPIByteArrayClass();
+                SAPIByteArray tmpBuff = new SAPIByteArray();
                 tmpBuff.FromArray(ref chunk);
 
                 //Add read buffer to the signature calculation
@@ -139,9 +132,7 @@ namespace CS_Buffer_Sign
                 chunkSize = Math.Min(remaining, chunkSize);
             }
 
-
-            SAPIByteArray signature = new SAPIByteArrayClass();
-            
+            SAPIByteArray signature = new SAPIByteArray();           
             //Get the final signature
             if ((rc = SAPI.BufferSignEnd (hSes, ctxBuffSign, signature)) != 0)
             {
@@ -161,9 +152,7 @@ namespace CS_Buffer_Sign
             SAPI.ContextRelease (ctxBuffSign);
             SAPI.Logoff (hSes);
             SAPI.HandleRelease (hSes);
-
         }
-
 
 
         public class SignatureDetails
@@ -175,15 +164,11 @@ namespace CS_Buffer_Sign
             public string SignerEmail {get; set; }
 
             public long SignatureTimeTicks {get; set;}
-
         }
-
-
 
 
         public static SignatureDetails ValidateSignature (Stream SignedData, Stream Signature)
         {
-
             if (SignedData == null) throw new ArgumentNullException("SignedData");
             if (Signature == null) throw new ArgumentNullException ("Signature");
 
@@ -193,30 +178,24 @@ namespace CS_Buffer_Sign
             SignatureDetails SigDetails = new SignatureDetails();
             int rc;
 
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 
-            SESHandle hSession = new SESHandleClass();
+            SESHandle hSession = new SESHandle();
             if ((rc = SAPI.HandleAcquire(out hSession)) != 0)
             {
                 throw new Exception(string.Format(
                     "Memory allocation error (#{0})", rc.ToString("X")));
             }
 
-
-
             //Extract Signer Data from the Signature stream
-            
-            
-            
             //Read Signature content from stream to the SAPI bytes array
             Array baSignature = new byte[(int)Signature.Length];
             Signature.Read((byte[])baSignature, 0, (int)Signature.Length);
-            SAPIByteArray sSignature = new SAPIByteArrayClass();
+            SAPIByteArray sSignature = new SAPIByteArray();
             sSignature.FromArray(ref baSignature);
 
-            //SAPIByteArray sSignedData = new SAPIByteArrayClass();
+            //SAPIByteArray sSignedData = new SAPIByteArray();
             //Array t1 = (Array)SignedData; sSignedData.FromArray(ref t1);
-            
 
             object Certificate;
             // Extract the signer's certificate from signature
@@ -232,9 +211,8 @@ namespace CS_Buffer_Sign
             SigDetails.SignerName = SigDetails.SignerCertificate.GetNameInfo (X509NameType.SimpleName, false);
             SigDetails.SignerEmail = SigDetails.SignerCertificate.GetNameInfo (X509NameType.EmailName, false);
 
-
             //Run the signature validation process
-            SAPIContext ctxValidateSignature = new SAPIContextClass();
+            SAPIContext ctxValidateSignature = new SAPIContext();
 
             if ((rc = SAPI.BufferVerifySignatureInit (hSession,
                 ctxValidateSignature, sSignature, 0)) != 0)
@@ -243,7 +221,6 @@ namespace CS_Buffer_Sign
                 throw new Exception(string.Format(
                     "An error occured while initializing the signature validation process (#{0})", rc.ToString("X")));
             }
-
 
             int remaining = (int) SignedData.Length;
             int chunkMaxSize = 1 << 20; //1MB
@@ -259,7 +236,7 @@ namespace CS_Buffer_Sign
                 if (read <= 0) throw new EndOfStreamException (String.Format("End of stream reached with {0} bytes left to read", remaining));
 
                 //Build SAPI-Compatible byte array
-                SAPIByteArray tmpBuff = new SAPIByteArrayClass();
+                SAPIByteArray tmpBuff = new SAPIByteArray();
                 tmpBuff.FromArray(ref chunk);
 
                 //Add read buffer to the validation calculation
@@ -276,11 +253,10 @@ namespace CS_Buffer_Sign
                 chunkSize = Math.Min(remaining, chunkSize);
             }
 
-
             //Get the final validation result 
-            SAPIFileTime signingTime = new SAPIFileTimeClass();
+            SAPIFileTime signingTime = new SAPIFileTime();
 
-            rc = SAPI.BufferVerifySignatureEnd(hSession, ctxValidateSignature, signingTime, new CertStatusClass());
+            rc = SAPI.BufferVerifySignatureEnd(hSession, ctxValidateSignature, signingTime, new CertStatus());
             if ((uint)rc == 0x90030360)  //SAPI_SIGNATURE_NOT_VALID
             {
                 SigDetails.isValid = false;
@@ -305,18 +281,11 @@ namespace CS_Buffer_Sign
                     "Failed to validate Digital Signature (#{0})", rc.ToString("X")));
             }
 
-
             //Cleanup memory
             SAPI.ContextRelease(ctxValidateSignature);
             SAPI.HandleRelease(hSession);
 
             return SigDetails;
-
         }
-            
-
-
-
-
     }
 }
