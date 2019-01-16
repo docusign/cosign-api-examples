@@ -1,92 +1,92 @@
+ant -f "C:\\work\\CoSign\\APIs Enablement\\docusign\\docusign-signature-appliance-api-recipes\\dsa-soap\\Java-User-Management" wsimport-client-spml
 init:
 wsimport-init:
-Created dir: C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\build\generated-sources\jax-ws
 wsimport-client-spml:
-Created dir: C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\build\generated\jax-wsCache\spml
-command line: wsimport -d C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\build\generated\jax-wsCache\spml -extension -Xnocompile -Xendorsed -keep -s C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\build\generated\jax-wsCache\spml -catalog C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\catalog.xml -verbose C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\xml-resources\web-service-references\spml\wsdl\cosigndemo.arx.com_8080\SAPIWS\spml.asmx.wsdl -wsdllocation https://cosigndemo.arx.com:8080/SAPIWS/spml.asmx?WSDL
+Created dir: C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\build\generated\jax-wsCache\spml
+command line: wsimport -d "C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\build\generated\jax-wsCache\spml" -extension -Xnocompile -Xendorsed -keep -s "C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\build\generated\jax-wsCache\spml" -encoding UTF-8 -catalog "C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\catalog.xml" -verbose "C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\xml-resources\web-service-references\spml\wsdl\prime-dsa-devctr.docusign.net_8080\sapiws\spml.asmx.wsdl" -wsdllocation https://prime-dsa-devctr.docusign.net:8080/sapiws/spml.asmx?WSDL
 parsing WSDL...
 
 
-[WARNING] src-resolve: Cannot resolve the name 's1:QueryClauseType' to a(n) 'type definition' component.
-  line 553 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema3
+[WARNING] src-resolve: Cannot resolve the name 's1:listTargetsRequest' to a(n) 'element declaration' component.
+  line 11 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema1
 
-[WARNING] src-resolve: Cannot resolve the name 's3:CoSignLogonData' to a(n) 'element declaration' component.
-  line 261 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+[WARNING] src-resolve: Cannot resolve the name 's4:setPasswordRequest' to a(n) 'element declaration' component.
+  line 137 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema1
+
+[WARNING] src-resolve: Cannot resolve the name 's2:searchRequest' to a(n) 'element declaration' component.
+  line 193 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema1
+
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 257 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
+
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 250 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":component (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 274 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+  line 274 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":namespacePrefixMap (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 287 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+  line 287 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":containerID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 326 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 343 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 380 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 392 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 401 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":schema (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 410 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":supportedSchemaEntity (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 422 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":capability (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 441 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+  line 326 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":appliesTo (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 450 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+  line 343 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 461 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":capability (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 363 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 470 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":supportedSchemaEntity (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 372 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 485 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 507 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":schema (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 382 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 518 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
-
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 529 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema2
+  line 394 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 742 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+  line 406 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 751 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+  line 443 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0:password":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 758 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 452 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0:password":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 769 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 461 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0:password":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 779 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0":errorMessage (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 470 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
-[WARNING] cos-nonambig: WC[##any] and "urn:oasis:names:tc:SPML:2:0:password":psoID (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
-  line 788 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl#types?schema5
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 485 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
+
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 507 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
+
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 518 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
+
+[WARNING] cos-nonambig: WC[##any] and "http://arx.com/SAPIWS/SPML/1.0":CoSignLogonData (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+  line 529 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl#types?schema2
 
 [WARNING] SOAP port "SPMLSoap12": uses a non-standard SOAP 1.2 binding.
-  line 1294 of file:/C:/Users/avivs/Documents/NetBeansProjects/CoSignSapiUMBasicSample/xml-resources/web-service-references/spml/wsdl/cosigndemo.arx.com_8080/SAPIWS/spml.asmx.wsdl
+  line 1294 of file:/C:/work/CoSign/APIs%20Enablement/docusign/docusign-signature-appliance-api-recipes/dsa-soap/Java-User-Management/xml-resources/web-service-references/spml/wsdl/prime-dsa-devctr.docusign.net_8080/sapiws/spml.asmx.wsdl
 
-generating code...
 
+Generating code...
+
+oasis\names\tc\spml\_2\_0\password\ExpirePasswordRequestType.java
+oasis\names\tc\spml\_2\_0\password\ObjectFactory.java
+oasis\names\tc\spml\_2\_0\password\ResetPasswordRequestType.java
+oasis\names\tc\spml\_2\_0\password\ResetPasswordResponseType.java
+oasis\names\tc\spml\_2\_0\password\SetPasswordRequestType.java
+oasis\names\tc\spml\_2\_0\password\ValidatePasswordRequestType.java
+oasis\names\tc\spml\_2\_0\password\ValidatePasswordResponseType.java
+oasis\names\tc\spml\_2\_0\password\package-info.java
 com\arx\sapiws\spml\_1\Add.java
 com\arx\sapiws\spml\_1\AddGroup.java
 com\arx\sapiws\spml\_1\AddGroupResponse.java
@@ -135,14 +135,6 @@ com\arx\sapiws\spml\_1\UserRecord.java
 com\arx\sapiws\spml\_1\ValidatePassword.java
 com\arx\sapiws\spml\_1\ValidatePasswordResponse.java
 com\arx\sapiws\spml\_1\package-info.java
-oasis\names\tc\spml\_2\_0\password\ExpirePasswordRequestType.java
-oasis\names\tc\spml\_2\_0\password\ObjectFactory.java
-oasis\names\tc\spml\_2\_0\password\ResetPasswordRequestType.java
-oasis\names\tc\spml\_2\_0\password\ResetPasswordResponseType.java
-oasis\names\tc\spml\_2\_0\password\SetPasswordRequestType.java
-oasis\names\tc\spml\_2\_0\password\ValidatePasswordRequestType.java
-oasis\names\tc\spml\_2\_0\password\ValidatePasswordResponseType.java
-oasis\names\tc\spml\_2\_0\password\package-info.java
 oasis\names\tc\spml\_2\_0\AddRequestType.java
 oasis\names\tc\spml\_2\_0\AddResponseType.java
 oasis\names\tc\spml\_2\_0\CapabilitiesListType.java
@@ -185,5 +177,5 @@ oasis\names\tc\spml\_2\_0\search\SearchQueryType.java
 oasis\names\tc\spml\_2\_0\search\SearchRequestType.java
 oasis\names\tc\spml\_2\_0\search\SearchResponseType.java
 oasis\names\tc\spml\_2\_0\search\package-info.java
-Copying 98 files to C:\Users\avivs\Documents\NetBeansProjects\CoSignSapiUMBasicSample\build\generated-sources\jax-ws
-BUILD SUCCESSFUL (total time: 5 seconds)
+Copying 98 files to C:\work\CoSign\APIs Enablement\docusign\docusign-signature-appliance-api-recipes\dsa-soap\Java-User-Management\build\generated-sources\jax-ws
+BUILD SUCCESSFUL (total time: 3 seconds)
