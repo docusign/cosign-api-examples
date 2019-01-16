@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSARestCsharpSample", "DSARestCsharpSample\DSARestCsharpSample.csproj", "{3A9E1A20-94DD-401B-A7F5-E76EFE831002}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DSARestPythonSample", "DSARestPythonSample\DSARestPythonSample.pyproj", "{05861076-A662-4313-BF58-4A86E9B6180E}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "DSARestNodejsSample", "DSARestNodejsSample\DSARestNodejsSample.njsproj", "{7EB3A879-D9C4-4394-9155-98DB0BE75FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A9E1A20-94DD-401B-A7F5-E76EFE831002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9E1A20-94DD-401B-A7F5-E76EFE831002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9E1A20-94DD-401B-A7F5-E76EFE831002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9E1A20-94DD-401B-A7F5-E76EFE831002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05861076-A662-4313-BF58-4A86E9B6180E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05861076-A662-4313-BF58-4A86E9B6180E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB3A879-D9C4-4394-9155-98DB0BE75FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB3A879-D9C4-4394-9155-98DB0BE75FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB3A879-D9C4-4394-9155-98DB0BE75FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB3A879-D9C4-4394-9155-98DB0BE75FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F18562D1-8B25-45DE-AD77-465CEA1F7AA9}
+	EndGlobalSection
+EndGlobal

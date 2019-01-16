@@ -1,0 +1,12 @@
+{
+  "name": "dsarest-nodejs-sample",
+  "version": "0.0.0",
+  "description": "DSARestNodejsSample",
+  "main": "app.js",
+  "author": {
+    "name": "Aviv.Simionovici"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
