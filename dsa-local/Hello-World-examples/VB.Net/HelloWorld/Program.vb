@@ -10,9 +10,9 @@ Module Program
 
         'Custom Values
         Dim filePath As String = "c:\\temp\\demo.pdf"   'PDF file to sign
-        Dim username As String = "{signer_username}"    'CoSign account username
-        Dim password As String = "{signer_password}"    'CoSign account password
-        Dim domain As String = Nothing                  'CoSign account domain
+        Dim username As String = "{signer_username}"    'DSA account username
+        Dim password As String = "{signer_password}"    'DSA account password
+        Dim domain As String = Nothing                  'DSA account domain
         Dim sigPageNum As Integer = 1                   'Create signature on the first page
         Dim sigX As Integer = 145                       'Signature field X location
         Dim sigY As Integer = 125                       'Signature field Y location
