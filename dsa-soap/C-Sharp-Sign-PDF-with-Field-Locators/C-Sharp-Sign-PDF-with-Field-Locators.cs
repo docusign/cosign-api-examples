@@ -51,7 +51,7 @@ public SAPISigFieldSettingsType[] getSigFieldLocatorsInPDF(
             DSS service = new DSS();
 			// The following service point url is for the DevCenter CoSign Central appliance
 			// For production, use your CoSign appliance's url
-            service.Url = "https://cosigndemo.arx.com:8080/sapiws/dss.asmx";  
+            service.Url = "https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx";  
  
             SignRequest sreq = new SignRequest();
             sreq.InputDocuments = Req.InputDocuments;
