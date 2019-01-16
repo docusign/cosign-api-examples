@@ -6,7 +6,7 @@ require 'HTTParty'
 file_path = 'c:/temp/demo.pdf';
 file_id = '123456'
 redirect_url = 'http://www.example.com/finishURL'
-cswa_upload_url = 'https://webagentdev.arx.com/Sign/UploadFileToSign'
+cswa_upload_url = 'https://webapp-dsa-devctr.docusign.net/Sign/UploadFileToSign'
 is_allow_adhoc = true
 is_enforce_reason = false
 

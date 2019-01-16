@@ -2,8 +2,8 @@
 /**
  * Author: Larry Kluger
  * Plugin Name: WP CoSign Forms Support
- * Author URI: http://developer.arx.com
- * Plugin URI: http://developer.arx.com
+ * Author URI: https://developers.docusign.com/dsa-api
+ * Plugin URI: https://developers.docusign.com/dsa-api
  * Description: Enables SaaS forms to be digitally signed with CoSign.
  * Version: 1.0.0
  * License: MIT
@@ -40,7 +40,7 @@ _date_format=ymd|F%20j,%20Y
 _date_fields=effectivedate
 */
 
-define( 'WEBAGENT_URL', 'https://webagentdev.arx.com/' );
+define( 'WEBAGENT_URL', 'https://webapp-dsa-devctr.docusign.net/' );
 define( 'CFS_THANK_YOU', 'cfs_thankyou' );
 define( 'CFS_DOWNLOAD', 'cfs_download' );
 define( 'CFS_VERSION', '0.0.5' );

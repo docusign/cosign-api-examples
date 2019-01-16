@@ -6,7 +6,7 @@
     <enforceReason>false</enforceReason>
   </Logic>
   <Url>
-    <finishURL>http://localhost:64956/retrieveSignedFile.aspx</finishURL>
+    <finishURL>retrieveSignedFile.aspx</finishURL>
   </Url>
   <Document>
     <fileID>#uploadedFileID#</fileID>

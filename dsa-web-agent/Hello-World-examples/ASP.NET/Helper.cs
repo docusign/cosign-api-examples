@@ -50,6 +50,17 @@ namespace CSWA_Integration
                 sampleXML = null;
             }
 
+            HttpRequest CREQ = HttpContext.Current.Request;
+            string baseUrl = CREQ.Url.Scheme + "://" + CREQ.Url.Authority + CREQ.ApplicationPath.TrimEnd('/') + "/";
+            string returnUrl = baseUrl + "retrieveSignedFile.aspx";
+            XDocument doc = XDocument.Parse(sampleXML);
+            foreach (XElement element in doc.Descendants().Where(
+                    e => e.Name.ToString().ToLower().Contains("finishurl")))
+            {
+                element.Value = returnUrl;
+            }
+
+            sampleXML = doc.ToString();
             return sampleXML;
         }
 

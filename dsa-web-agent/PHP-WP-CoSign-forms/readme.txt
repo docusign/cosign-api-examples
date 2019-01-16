@@ -1,3 +1,6 @@
+=== Jan 19 Adjusted to DSA ====
+"CoSign" is Now DocuSign Signature Appliance = DSA
+
 === WP CoSign Forms Support ===
 Contributors: LarryK
 Tags: form forms 
@@ -42,4 +45,5 @@ We haven't tested it. Please let us know your experience!
 December 27, 2014 by LarryK
 
 * First release, supports GravityForms and JotForm.
+
 

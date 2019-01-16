@@ -2,7 +2,7 @@ require 'base64'
 require 'net/http'
 require 'HTTParty'
 
-cswa_pull_url = 'https://webagentdev.arx.com/Sign/DownloadSignedFileG'
+cswa_pull_url = 'https://webapp-dsa-devctr.docusign.net/Sign/DownloadSignedFileG'
 signed_file_path = 'c:/temp/signedDoc.pdf';
 
 session_id = '1187160054'
