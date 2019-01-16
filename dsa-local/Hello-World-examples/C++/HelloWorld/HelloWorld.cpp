@@ -16,9 +16,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	// Custom Values
 	wchar_t 					*filePath				= L"c:\\temp\\demo.pdf";	// PDF file to sign
-	wchar_t 					*username				= L"{signer_username}";		// CoSign Account Username
-	wchar_t						*domain					= NULL;						// CoSign Account Domain
-	wchar_t						*password				= L"{signer_password}";		// CoSign Account Password
+	wchar_t 					*username				= L"{signer_username}";		// DSA Account Username
+	wchar_t						*password				= L"{signer_password}";		// DSA Account Password
+	wchar_t						*domain					= NULL;						// DSA Account Domain
 	int							sigPageNum				= 1;						// Create Signature on the first page
 	int							sigX					= 145;						// Signature Field X location
 	int							sigY					= 125;						// Signature Field Y location
