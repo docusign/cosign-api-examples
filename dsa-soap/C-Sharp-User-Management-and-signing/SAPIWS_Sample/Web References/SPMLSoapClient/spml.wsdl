@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://arx.com/SAPIWS/SPML/1.0" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arx.com/SAPIWS/SPML/1.0/" xmlns:s1="urn:oasis:names:tc:SPML:2:0" xmlns:s4="urn:oasis:names:tc:SPML:2:0:password" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="urn:oasis:names:tc:SPML:2:0:search" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://arx.com/SAPIWS/SPML/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:tns="http://arx.com/SAPIWS/SPML/1.0/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s4="urn:oasis:names:tc:SPML:2:0:password" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="urn:oasis:names:tc:SPML:2:0" xmlns:s2="urn:oasis:names:tc:SPML:2:0:search" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://arx.com/SAPIWS/SPML/1.0" targetNamespace="http://arx.com/SAPIWS/SPML/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://arx.com/SAPIWS/SPML/1.0/">
       <s:import namespace="urn:oasis:names:tc:SPML:2:0" />
@@ -340,6 +340,69 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
+      <s:complexType name="CapabilityType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="appliesTo" type="s1:SchemaEntityRefType" />
+            </s:sequence>
+            <s:attribute name="namespaceURI" type="s:anyURI" />
+            <s:attribute name="location" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SchemaEntityRefType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute name="entityName" type="s:string" />
+            <s:attribute name="isContainer" type="s:boolean" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CapabilitiesListType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capability" type="s1:CapabilityType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SchemaType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="supportedSchemaEntity" type="s1:SchemaEntityRefType" />
+            </s:sequence>
+            <s:attribute name="ref" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TargetType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="schema" type="s1:SchemaType" />
+              <s:element minOccurs="0" maxOccurs="1" name="capabilities" type="s1:CapabilitiesListType" />
+            </s:sequence>
+            <s:attribute name="targetID" type="s:string" />
+            <s:attribute name="profile" type="s:anyURI" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PSOType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:UserRecord" />
+              <s:element minOccurs="0" maxOccurs="1" ref="s3:GroupRecord" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="capabilityData" type="s1:CapabilityDataType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
       <s:complexType name="ResponseType">
         <s:complexContent mixed="false">
           <s:extension base="s1:ExtensibleType">
@@ -377,27 +440,6 @@
           <s:enumeration value="containerNotEmpty" />
         </s:restriction>
       </s:simpleType>
-      <s:complexType name="PSOType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
-              <s:element minOccurs="0" maxOccurs="1" ref="s3:UserRecord" />
-              <s:element minOccurs="0" maxOccurs="1" ref="s3:GroupRecord" />
-              <s:element minOccurs="0" maxOccurs="unbounded" name="capabilityData" type="s1:CapabilityDataType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="LookupResponseType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ResponseType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="pso" type="s1:PSOType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
       <s:complexType name="ListTargetsResponseType">
         <s:complexContent mixed="false">
           <s:extension base="s1:ResponseType">
@@ -407,54 +449,12 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="TargetType">
+      <s:complexType name="ModifyResponseType">
         <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
+          <s:extension base="s1:ResponseType">
             <s:sequence>
-              <s:element minOccurs="0" maxOccurs="unbounded" name="schema" type="s1:SchemaType" />
-              <s:element minOccurs="0" maxOccurs="1" name="capabilities" type="s1:CapabilitiesListType" />
+              <s:element minOccurs="0" maxOccurs="1" name="pso" type="s1:PSOType" />
             </s:sequence>
-            <s:attribute name="targetID" type="s:string" />
-            <s:attribute name="profile" type="s:anyURI" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="SchemaType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="unbounded" name="supportedSchemaEntity" type="s1:SchemaEntityRefType" />
-            </s:sequence>
-            <s:attribute name="ref" type="s:anyURI" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="SchemaEntityRefType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:attribute name="targetID" type="s:string" />
-            <s:attribute name="entityName" type="s:string" />
-            <s:attribute name="isContainer" type="s:boolean" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="CapabilitiesListType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="unbounded" name="capability" type="s1:CapabilityType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="CapabilityType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="unbounded" name="appliesTo" type="s1:SchemaEntityRefType" />
-            </s:sequence>
-            <s:attribute name="namespaceURI" type="s:anyURI" />
-            <s:attribute name="location" type="s:anyURI" />
           </s:extension>
         </s:complexContent>
       </s:complexType>
@@ -467,7 +467,7 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="ModifyResponseType">
+      <s:complexType name="LookupResponseType">
         <s:complexContent mixed="false">
           <s:extension base="s1:ResponseType">
             <s:sequence>
@@ -571,6 +571,13 @@
           <s:enumeration value="subTree" />
         </s:restriction>
       </s:simpleType>
+      <s:complexType name="ResultsIteratorType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ExtensibleType">
+            <s:attribute name="ID" type="s:ID" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
       <s:complexType name="SearchResponseType">
         <s:complexContent mixed="false">
           <s:extension base="s1:ResponseType">
@@ -581,10 +588,12 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="ResultsIteratorType">
+      <s:complexType name="CloseIteratorRequestType">
         <s:complexContent mixed="false">
-          <s:extension base="s1:ExtensibleType">
-            <s:attribute name="ID" type="s:ID" />
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="iterator" type="s2:ResultsIteratorType" />
+            </s:sequence>
           </s:extension>
         </s:complexContent>
       </s:complexType>
@@ -601,15 +610,6 @@
         </s:complexContent>
       </s:complexType>
       <s:complexType name="IterateRequestType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:RequestType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="iterator" type="s2:ResultsIteratorType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="CloseIteratorRequestType">
         <s:complexContent mixed="false">
           <s:extension base="s1:RequestType">
             <s:sequence>
@@ -755,6 +755,16 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
+      <s:complexType name="ValidatePasswordRequestType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:RequestType">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
+              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
       <s:complexType name="SetPasswordRequestType">
         <s:complexContent mixed="false">
           <s:extension base="s1:RequestType">
@@ -781,16 +791,6 @@
           <s:extension base="s1:RequestType">
             <s:sequence>
               <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="ValidatePasswordRequestType">
-        <s:complexContent mixed="false">
-          <s:extension base="s1:RequestType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="psoID" type="s1:PSOIdentifierType" />
-              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -1289,10 +1289,10 @@
   </wsdl:binding>
   <wsdl:service name="SPML">
     <wsdl:port name="SPMLSoap" binding="tns:SPMLSoap">
-      <soap:address location="https://prime.cosigntrial.com:8080/SAPIWS/spml.asmx" />
+      <soap:address location="https://prime-dsa-devctr.docusign.net:8080/SAPIWS/spml.asmx" />
     </wsdl:port>
     <wsdl:port name="SPMLSoap12" binding="tns:SPMLSoap12">
-      <soap12:address location="https://prime.cosigntrial.com:8080/SAPIWS/spml.asmx" />
+      <soap12:address location="https://prime-dsa-devctr.docusign.net:8080/SAPIWS/spml.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

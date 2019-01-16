@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://arx.com/SAPIWS/DSS/1.0" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arx.com/SAPIWS/DSS/1.0/" xmlns:s1="urn:oasis:names:tc:dss:1.0:core:schema" xmlns:s4="http://www.w3.org/2000/09/xmldsig#" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://arx.com/SAPIWS/DSS/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:tns="http://arx.com/SAPIWS/DSS/1.0/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s4="http://www.w3.org/2000/09/xmldsig#" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="urn:oasis:names:tc:dss:1.0:core:schema" xmlns:s2="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://arx.com/SAPIWS/DSS/1.0" targetNamespace="http://arx.com/SAPIWS/DSS/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://arx.com/SAPIWS/DSS/1.0/">
       <s:import namespace="urn:oasis:names:tc:dss:1.0:core:schema" />
@@ -54,8 +54,8 @@
                   <s:complexType>
                     <s:sequence>
                       <s:choice minOccurs="1" maxOccurs="1">
-                        <s:element minOccurs="0" maxOccurs="1" ref="s4:KeyInfo" />
                         <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
+                        <s:element minOccurs="0" maxOccurs="1" ref="s4:KeyInfo" />
                       </s:choice>
                     </s:sequence>
                   </s:complexType>
@@ -72,8 +72,8 @@
                   <s:complexType>
                     <s:sequence>
                       <s:choice minOccurs="1" maxOccurs="1">
-                        <s:element minOccurs="0" maxOccurs="1" name="XPathAfter" type="s:string" />
                         <s:element minOccurs="0" maxOccurs="1" name="XPathFirstChildOf" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="XPathAfter" type="s:string" />
                       </s:choice>
                     </s:sequence>
                     <s:attribute name="WhichDocument" type="s:IDREF" />
@@ -97,7 +97,7 @@
             <s:complexType>
               <s:sequence>
                 <s:choice minOccurs="0" maxOccurs="unbounded">
-                  <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Document" type="s1:DocumentType" />
                   <s:element minOccurs="0" maxOccurs="1" name="DocumentHash">
                     <s:complexType>
                       <s:complexContent mixed="false">
@@ -133,7 +133,7 @@
                       </s:complexContent>
                     </s:complexType>
                   </s:element>
-                  <s:element minOccurs="0" maxOccurs="1" name="Document" type="s1:DocumentType" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
                 </s:choice>
               </s:sequence>
             </s:complexType>
@@ -153,19 +153,11 @@
           <s:any minOccurs="0" maxOccurs="unbounded" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="DocumentBaseType" abstract="true">
-        <s:attribute name="ID" type="s:ID" />
-        <s:attribute name="RefURI" type="s:anyURI" />
-        <s:attribute name="RefType" type="s:anyURI" />
-        <s:attribute name="SchemaRefs" type="s:IDREFS" />
-      </s:complexType>
       <s:complexType name="DocumentType">
         <s:complexContent mixed="false">
           <s:extension base="s1:DocumentBaseType">
             <s:sequence>
               <s:choice minOccurs="1" maxOccurs="1">
-                <s:element minOccurs="0" maxOccurs="1" name="InlineXML" type="s1:InlineXMLType" />
-                <s:element minOccurs="0" maxOccurs="1" name="AttachmentReference" type="s1:AttachmentReferenceType" />
                 <s:element minOccurs="0" maxOccurs="1" name="Base64Data">
                   <s:complexType>
                     <s:simpleContent>
@@ -175,12 +167,20 @@
                     </s:simpleContent>
                   </s:complexType>
                 </s:element>
-                <s:element minOccurs="0" maxOccurs="1" name="Base64XML" type="s:base64Binary" />
                 <s:element minOccurs="0" maxOccurs="1" name="EscapedXML" type="s:string" />
+                <s:element minOccurs="0" maxOccurs="1" name="Base64XML" type="s:base64Binary" />
+                <s:element minOccurs="0" maxOccurs="1" name="InlineXML" type="s1:InlineXMLType" />
+                <s:element minOccurs="0" maxOccurs="1" name="AttachmentReference" type="s1:AttachmentReferenceType" />
               </s:choice>
             </s:sequence>
           </s:extension>
         </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DocumentBaseType" abstract="true">
+        <s:attribute name="ID" type="s:ID" />
+        <s:attribute name="RefURI" type="s:anyURI" />
+        <s:attribute name="RefType" type="s:anyURI" />
+        <s:attribute name="SchemaRefs" type="s:IDREFS" />
       </s:complexType>
       <s:complexType name="InlineXMLType">
         <s:sequence>
@@ -206,6 +206,15 @@
                   <s:complexType>
                     <s:sequence>
                       <s:choice minOccurs="1" maxOccurs="1">
+                        <s:element minOccurs="0" maxOccurs="1" name="Base64Signature">
+                          <s:complexType>
+                            <s:simpleContent>
+                              <s:extension base="s:base64Binary">
+                                <s:attribute name="Type" type="s:anyURI" />
+                              </s:extension>
+                            </s:simpleContent>
+                          </s:complexType>
+                        </s:element>
                         <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
                         <s:element minOccurs="0" maxOccurs="1" name="SignaturePtr">
                           <s:complexType>
@@ -217,23 +226,14 @@
                           <s:complexType>
                             <s:sequence>
                               <s:choice minOccurs="1" maxOccurs="1">
+                                <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
                                 <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
                                 <s:element minOccurs="0" maxOccurs="1" name="RFC3161TimeStampToken" type="s:base64Binary" />
-                                <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
                               </s:choice>
                             </s:sequence>
                           </s:complexType>
                         </s:element>
                         <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
-                        <s:element minOccurs="0" maxOccurs="1" name="Base64Signature">
-                          <s:complexType>
-                            <s:simpleContent>
-                              <s:extension base="s:base64Binary">
-                                <s:attribute name="Type" type="s:anyURI" />
-                              </s:extension>
-                            </s:simpleContent>
-                          </s:complexType>
-                        </s:element>
                       </s:choice>
                     </s:sequence>
                     <s:attribute name="SchemaRefs" type="s:IDREFS" />
@@ -299,6 +299,15 @@
                   <s:complexType>
                     <s:sequence>
                       <s:choice minOccurs="1" maxOccurs="1">
+                        <s:element minOccurs="0" maxOccurs="1" name="Base64Signature">
+                          <s:complexType>
+                            <s:simpleContent>
+                              <s:extension base="s:base64Binary">
+                                <s:attribute name="Type" type="s:anyURI" />
+                              </s:extension>
+                            </s:simpleContent>
+                          </s:complexType>
+                        </s:element>
                         <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
                         <s:element minOccurs="0" maxOccurs="1" name="SignaturePtr">
                           <s:complexType>
@@ -310,23 +319,14 @@
                           <s:complexType>
                             <s:sequence>
                               <s:choice minOccurs="1" maxOccurs="1">
+                                <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
                                 <s:element minOccurs="0" maxOccurs="1" name="Other" type="s1:AnyType" />
                                 <s:element minOccurs="0" maxOccurs="1" name="RFC3161TimeStampToken" type="s:base64Binary" />
-                                <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
                               </s:choice>
                             </s:sequence>
                           </s:complexType>
                         </s:element>
                         <s:element minOccurs="0" maxOccurs="1" ref="s4:Signature" />
-                        <s:element minOccurs="0" maxOccurs="1" name="Base64Signature">
-                          <s:complexType>
-                            <s:simpleContent>
-                              <s:extension base="s:base64Binary">
-                                <s:attribute name="Type" type="s:anyURI" />
-                              </s:extension>
-                            </s:simpleContent>
-                          </s:complexType>
-                        </s:element>
                       </s:choice>
                     </s:sequence>
                     <s:attribute name="SchemaRefs" type="s:IDREFS" />
@@ -425,9 +425,9 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="ConfValueID" type="s3:ConfIDEnum" />
           <s:choice minOccurs="1" maxOccurs="1">
+            <s:element minOccurs="0" maxOccurs="1" name="StringValue" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="IntegerValue" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="BinaryValue" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="StringValue" type="s:string" />
           </s:choice>
         </s:sequence>
       </s:complexType>
@@ -473,6 +473,20 @@
           <s:enumeration value="InfpTemplateName" />
           <s:enumeration value="AppearanceMask" />
           <s:enumeration value="OldStylePDFApp" />
+          <s:enumeration value="PDFForceDisplaySigner" />
+          <s:enumeration value="GRImgReduceScale" />
+          <s:enumeration value="SignatureAdditionalBytes" />
+          <s:enumeration value="XMLAltID" />
+          <s:enumeration value="PADESEnable" />
+          <s:enumeration value="PDFLocatorOpenPattern" />
+          <s:enumeration value="PDFLocatorClosePattern" />
+          <s:enumeration value="AutoGRImageDisable" />
+          <s:enumeration value="EmbedCRLChain" />
+          <s:enumeration value="MAXCRLSize" />
+          <s:enumeration value="NextCRLUpdateThreshold" />
+          <s:enumeration value="CriticalCRLErrors" />
+          <s:enumeration value="CRLCommTimeout" />
+          <s:enumeration value="OCSPCacheLength" />
         </s:restriction>
       </s:simpleType>
       <s:element name="GraphicImageToSet" type="s3:GraphicImageType" />
@@ -585,15 +599,20 @@
         <s:sequence>
           <s:choice minOccurs="0" maxOccurs="unbounded">
             <s:element minOccurs="0" maxOccurs="1" name="MgmtData" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RetrievalMethod" type="s4:RetrievalMethodType" />
-            <s:element minOccurs="0" maxOccurs="1" name="KeyValue" type="s4:KeyValueType" />
-            <s:element minOccurs="0" maxOccurs="1" name="PGPData" type="s4:PGPDataType" />
             <s:element minOccurs="0" maxOccurs="1" name="SPKIData" type="s4:SPKIDataType" />
-            <s:element minOccurs="0" maxOccurs="1" name="X509Data" type="s4:X509DataType" />
             <s:element minOccurs="0" maxOccurs="1" name="KeyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievalMethod" type="s4:RetrievalMethodType" />
+            <s:element minOccurs="0" maxOccurs="1" name="PGPData" type="s4:PGPDataType" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509Data" type="s4:X509DataType" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyValue" type="s4:KeyValueType" />
           </s:choice>
         </s:sequence>
         <s:attribute name="Id" type="s:ID" />
+      </s:complexType>
+      <s:complexType name="SPKIDataType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SPKISexp" type="s:base64Binary" />
+        </s:sequence>
       </s:complexType>
       <s:complexType name="RetrievalMethodType">
         <s:sequence>
@@ -612,6 +631,31 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="XPath" type="s:string" />
         </s:sequence>
         <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="PGPDataType">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyPacket" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyID" type="s:base64Binary" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="X509DataType">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="X509IssuerSerial" type="s4:X509IssuerSerialType" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509CRL" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509Certificate" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509SubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509SKI" type="s:base64Binary" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="X509IssuerSerialType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="X509IssuerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="X509SerialNumber" type="s:integer" />
+        </s:sequence>
       </s:complexType>
       <s:complexType name="KeyValueType" mixed="true">
         <s:sequence>
@@ -636,36 +680,6 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Modulus" type="s:base64Binary" />
           <s:element minOccurs="0" maxOccurs="1" name="Exponent" type="s:base64Binary" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PGPDataType">
-        <s:sequence>
-          <s:choice minOccurs="0" maxOccurs="unbounded">
-            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyID" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyPacket" type="s:base64Binary" />
-          </s:choice>
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="SPKIDataType">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="SPKISexp" type="s:base64Binary" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="X509DataType">
-        <s:sequence>
-          <s:choice minOccurs="0" maxOccurs="unbounded">
-            <s:element minOccurs="0" maxOccurs="1" name="X509SKI" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="X509SubjectName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="X509CRL" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="X509Certificate" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="X509IssuerSerial" type="s4:X509IssuerSerialType" />
-          </s:choice>
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="X509IssuerSerialType">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="X509IssuerName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="X509SerialNumber" type="s:integer" />
         </s:sequence>
       </s:complexType>
       <s:element name="DigestMethod" type="s4:DigestMethodType" />
@@ -800,10 +814,10 @@
   </wsdl:binding>
   <wsdl:service name="DSS">
     <wsdl:port name="DSSSoap" binding="tns:DSSSoap">
-      <soap:address location="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx" />
+      <soap:address location="https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx" />
     </wsdl:port>
     <wsdl:port name="DSSSoap12" binding="tns:DSSSoap12">
-      <soap12:address location="https://prime.cosigntrial.com:8080/SAPIWS/dss.asmx" />
+      <soap12:address location="https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
