@@ -5,6 +5,12 @@ The DocuSign Signature Appliance supports several APIs. This repo includes examp
 
 For more information on the APIs, including Hello World examples and reference documentation, please contact your DocuSign Account Executive.
 
+## DocuSign Signature Appliance REST API
+- [DSA-Rest-CSharp-Sample](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-rest/Hello-World-examples/DSARestCsharpSample). Sign a PDF using DSA REST V1.0 from CSharp (VS2017 project).
+- [C-Sharp-User-Management-and-signing](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-rest/Hello-World-examples/DSARestJavaSample). Sign a PDF using DSA REST V1.0 from Java (NetBeans project).
+- [C-Sharp-Sign-PDF-with-Field-Locators](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-rest/Hello-World-examples/DSARestNodejsSample). Sign a PDF using DSA REST V1.0 from NodeJS (VS2017 project).
+- [Java-User-Management](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-rest/Hello-World-examples/DSARestPythonSample). Sign a PDF using DSA REST V1.0 from Python (VS2017 project).
+
 ## DocuSign Signature Appliance Web Agent API
 - [Hello World Example](https://github.com/docusign/recipe-dsa-014-web-agent) A Node.JS example of signing a PDF file via the Web Agent. You can try the example, for free, on Heroku.
 - [PHP-WP-CoSign-forms](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-web-agent/PHP-WP-CoSign-forms) A WordPress plugin that processes web form data, converts it to a PDF by using [WebMerge](http://webmerge.me), and then digitally signs the PDF via the WebAgent API.
