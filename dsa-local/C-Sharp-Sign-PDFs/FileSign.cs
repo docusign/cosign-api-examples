@@ -1,7 +1,6 @@
 using System;
 using SAPILib;
 
-
 namespace CSPdfSign
 {
 	/// <summary>
@@ -9,7 +8,6 @@ namespace CSPdfSign
 	/// </summary>
 	public class FileSign
 	{
-
         public const int SAPI_ENUM_DRAWING_ELEMENT_GRAPHICAL_IMAGE = 0x00000001;
         public const int SAPI_ENUM_DRAWING_ELEMENT_SIGNED_BY = 0x00000002;
         public const int SAPI_ENUM_DRAWING_ELEMENT_REASON = 0x00000004;
@@ -20,19 +18,13 @@ namespace CSPdfSign
         public const int AR_GR_SIG_DATA_FORMAT_ALL = 0xFFFFFFF;
         public const uint SAPI_ERROR_NO_MORE_ITEMS = 0x90030103;
 
-
-
-
-
 		public FileSign() {}
-
-
 
         //SAPIInit() should be called in the static constructor in order to make sure
         //that it's called only once, when the class is being initialized.
         static FileSign()
         {
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
             int rc = SAPI.Init(); //SAPIInit() should be called once per process
             if (rc != 0) throw new Exception("Failed to initialize SAPI! (" + rc.ToString("X") + ")");
         }
@@ -50,12 +42,11 @@ namespace CSPdfSign
 									int page, int x, int y, int height, int width,
                                     bool Invisible, string Reason, int AppearanceMask, string NewFieldName, string GraphImgName) 
         {
-			
             int rc;
 			SESHandle SesHandle;
             SigFieldHandle sf = null;
 
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 			
             if ((rc = SAPI.HandleAcquire(out SesHandle)) != 0) throw new Exception("Failed in SAPIHandleAcquire() with rc = " + rc.ToString("X"));
 
@@ -66,12 +57,10 @@ namespace CSPdfSign
                 throw new Exception("Failed to authenticate user with rc = " + rc.ToString("X"));
             }
 
-
             //Set Graphical Image if required
             if (GraphImgName != null && GraphImgName.Length > 1)
             {
-
-                SAPIContext ctxGraphImg = new SAPIContextClass();
+                SAPIContext ctxGraphImg = new SAPIContext();
 
                 //Start Graphical Images Enumeration
                 if ((rc = SAPI.GraphicSigImageEnumInit(SesHandle, ctxGraphImg, AR_GR_SIG_DATA_FORMAT_ALL, 0)) != 0)
@@ -108,7 +97,6 @@ namespace CSPdfSign
                     //Check if required Graphical image has been found
                     if (giInfo.Name.Trim().ToLower() == GraphImgName.Trim().ToLower())
                     {
-
                         //If found - set is as default Graph. Image
                         if ((rc = SAPI.GraphicSigImageSetDefault(SesHandle, hGrImg)) != 0)
                         {
@@ -137,15 +125,13 @@ namespace CSPdfSign
                     SAPI.HandleRelease(SesHandle);
                     throw new Exception("Failed to find Graphical Image with name: " + GraphImgName);
                 }
-
             }
-
 
             //Create new signature field
             if (FieldName == null)
             {
-                SigFieldSettingsClass SFS = new SigFieldSettingsClass();
-                TimeFormatClass TF = new TimeFormatClass();
+                SigFieldSettings SFS = new SigFieldSettings();
+                TimeFormat TF = new TimeFormat();
                 int Flags = 0;
 
                 //Define name of the new signature field
@@ -154,7 +140,6 @@ namespace CSPdfSign
                     SFS.Name = NewFieldName;
                     Flags |= AR_PDF_FLAG_FIELD_NAME_SET;
                 }
-
 
                 if (Invisible)
                 {
@@ -198,11 +183,8 @@ namespace CSPdfSign
             //Find an existing signature field by name
             else
             {
-               
-
-                SAPIContext ctxField = new SAPIContextClass();
+                SAPIContext ctxField = new SAPIContext();
                 int NumOfFields = 0;
-
 
                 //Initiate the Signature Fields enumeration process
                 if ((rc = SAPI.SignatureFieldEnumInit(SesHandle, ctxField, SAPI_ENUM_FILE_TYPE.SAPI_ENUM_FILE_ADOBE,
@@ -213,11 +195,9 @@ namespace CSPdfSign
                     throw new Exception("Failed to start signature field enumeration with rc = " + rc.ToString("X"));
                 }
 
-
                 bool isFound = false;
                 for (int i = 0; i < NumOfFields; i++)
                 {
-
                     //Get Next field's handle
                     if ((rc = SAPI.SignatureFieldEnumCont(SesHandle, ctxField, out sf)) != 0)
                     {
@@ -228,8 +208,8 @@ namespace CSPdfSign
                     }
 
                     //Retrieve Signature Field's info
-                    SigFieldSettings sfs = new SigFieldSettingsClass();
-                    SigFieldInfo sfi = new SigFieldInfoClass();
+                    SigFieldSettings sfs = new SigFieldSettings();
+                    SigFieldInfo sfi = new SigFieldInfo();
                     if ((rc = SAPI.SignatureFieldInfoGet(SesHandle, sf, sfs, sfi)) != 0)
                     {
                         SAPI.HandleRelease(sf); 
@@ -238,7 +218,6 @@ namespace CSPdfSign
                         SAPI.HandleRelease(SesHandle);
                         throw new Exception("Failed to retrieve signature field details with rc = " + rc.ToString("X"));
                     }
-
 
                     //Check that the field we've found is not signed. If Signed - just skip it.
                     if (sfi.IsSigned != 0) continue;
@@ -252,7 +231,6 @@ namespace CSPdfSign
 
                     //Release handle of irrelevant signature field
                     SAPI.HandleRelease(sf);
-
                 }
 
                 if (!isFound)
@@ -262,8 +240,6 @@ namespace CSPdfSign
                     SAPI.HandleRelease(SesHandle);
                     throw new Exception("The file doesn't contain any signature field named: " + FieldName);
                 }
-
-
             }
 
             //Define the Reason

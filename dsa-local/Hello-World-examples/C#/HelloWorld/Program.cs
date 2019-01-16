@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SAPILib;
-using System.IO;
 
 namespace HelloWorld
 {
@@ -14,14 +10,14 @@ namespace HelloWorld
             const int SAPI_OK = 0;
 
             int rc;
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
             SESHandle sesHandle = null;
 
             // Custom Values
             string  filePath            = @"c:\temp\demo.pdf";  // PDF file to sign
-            string  username            = "{signer_username}";  // CoSign account username
-            string  password            = "{signer_password}";  // CoSign account password
-            string  domain              = null;                 // CoSign account domain
+            string username             = "{signer_username}";  // DSA account username
+            string password             = "{signer_password}";  // DSA account password
+            string domain               = null;                 // DSA account domain
             int     sigPageNum		    = 1;				    // Create signature on the first page
 	        int     sigX				= 145;					// Signature field X location
 	        int     sigY				= 125;					// Signature field Y location
@@ -53,8 +49,8 @@ namespace HelloWorld
                     throw new Exception(string.Format("Failed to authenticate user ({0})", rc.ToString("X")));
                 }
 
-                SigFieldSettingsClass SFS = new SigFieldSettingsClass();
-                TimeFormatClass TF = new TimeFormatClass();
+                SigFieldSettings SFS = new SigFieldSettings();
+                TimeFormat TF = new TimeFormat();
 
                 // Define signature field settings
                 SFS.Page            = sigPageNum;

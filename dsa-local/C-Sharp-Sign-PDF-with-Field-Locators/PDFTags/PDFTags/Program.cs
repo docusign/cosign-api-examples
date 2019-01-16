@@ -3,14 +3,11 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.IO;
 using SAPILib;
 
 namespace PDFTags
 {
-
     class Program
     {
         public const int AR_PDF_FLAG_FIELD_NAME_SET = 0x00000080;
@@ -23,12 +20,12 @@ namespace PDFTags
             string endDelim = ">>";
             int rc;
             SESHandle SesHandle;
-            SigFieldSettingsClass SFS = new SigFieldSettingsClass();
-            TimeFormatClass TF = new TimeFormatClass();
+            SigFieldSettings SFS = new SigFieldSettings();
+            TimeFormat TF = new TimeFormat();
             int Flags = AR_PDF_FLAG_FIELD_NAME_SET;
             int LocNumber;
 
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 
             // SAPIInit() should be called once per process
             if ((rc = SAPI.Init()) != 0) throw new Exception("Failed to initialize SAPI! (" + rc.ToString("X") + ")");
@@ -36,7 +33,7 @@ namespace PDFTags
             // Open a new SAPI context
             if ((rc = SAPI.HandleAcquire(out SesHandle)) != 0) throw new Exception("Failed in SAPIHandleAcquire() with rc = " + rc.ToString("X"));
 
-            if ((rc = SAPI.Logon(SesHandle, "testuser", null, "12345678")) != 0)
+            if ((rc = SAPI.Logon(SesHandle, "{DSA User}", null, "{DSA User password}")) != 0)
             {
                 SAPI.HandleRelease(SesHandle);
                 throw new Exception("Failed in SAPILogon() with rc = " + rc.ToString("X"));
@@ -54,7 +51,7 @@ namespace PDFTags
             SAPIContext SigLocatorCtx = new SAPIContext();
 
             Array fileBytes = File.ReadAllBytes(InFileName);
-            SAPIByteArray doc = new SAPIByteArrayClass();
+            SAPIByteArray doc = new SAPIByteArray();
             doc.FromArray(ref fileBytes);
             FileHandle fh;
             if ((rc = SAPI.CreateFileHandleByMem(out fh, SAPI_ENUM_FILE_TYPE.SAPI_ENUM_FILE_ADOBE, 0, doc)) != 0)
@@ -134,6 +131,5 @@ namespace PDFTags
             SAPI.HandleRelease(fh);
             SAPI.HandleRelease(SesHandle);
         }
-
     }
 }

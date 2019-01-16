@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using SAPILib;
 
@@ -15,7 +11,6 @@ namespace XMLSign
         private const int AR_XML_SIG_TYPE_XADES_BES = 0x00000010;
 
         private static object _SyncRoot = new object();
-
 
         //Checks if SAPI is initialized or not.
         private static bool isSAPIInitialized(SAPICrypt SAPI)
@@ -32,13 +27,12 @@ namespace XMLSign
         //Thread-Safe SAPIInit()
         private static void SAPIInit()
         {
-            SAPICrypt SAPI = new SAPICryptClass();
+            SAPICrypt SAPI = new SAPICrypt();
 
             lock (_SyncRoot)
             {
                 //Do nothing if SAPI is initialized already
                 if (isSAPIInitialized(SAPI)) return;
-
 
                 //Initialize SAPI
                 int rc = SAPI.Init();
@@ -58,7 +52,6 @@ namespace XMLSign
             string XMLDataToSign     //The stream to read the data to be signed from
             )
         {
-
             if (string.IsNullOrEmpty(Username)) throw new ArgumentNullException("Username");
             if (string.IsNullOrEmpty(Password)) throw new ArgumentNullException("Password");
             if (XMLDataToSign == null) throw new ArgumentNullException("XMLDataToSign");
@@ -67,8 +60,8 @@ namespace XMLSign
             SAPIInit();
 
             //Instantiate SAPI object
-            SAPICrypt SAPI = new SAPICryptClass();
-            SigFieldSettings SFS = new SigFieldSettingsClass();
+            SAPICrypt SAPI = new SAPICrypt();
+            SigFieldSettings SFS = new SigFieldSettings();
 
             SESHandle hSes = null;
             int rc = 0;
@@ -91,9 +84,8 @@ namespace XMLSign
                     "Failed to authenticate the user(#{0})", rc.ToString("X")));
             }
 
-
             if ((rc = SAPI.SignatureFieldCreateSignEx2(hSes, SAPI_ENUM_FILE_TYPE.SAPI_ENUM_FILE_XML,
-                XMLDataToSign, null, new SigFieldSettingsClass(), AR_XML_XML_SIG_TYPE_ENVELOPED | AR_XML_SIG_TYPE_XADES_BES, null)) != 0)
+                XMLDataToSign, null, new SigFieldSettings(), AR_XML_XML_SIG_TYPE_ENVELOPED | AR_XML_SIG_TYPE_XADES_BES, null)) != 0)
             {
                 SAPI.Logoff(hSes);
                 SAPI.HandleRelease(hSes);
@@ -105,9 +97,7 @@ namespace XMLSign
             //Cleanup memory
             SAPI.Logoff(hSes);
             SAPI.HandleRelease(hSes);
-
         }
-
 
 
         public class SignatureDetails
@@ -119,34 +109,30 @@ namespace XMLSign
             public string SignerEmail { get; set; }
 
             public long SignatureTimeTicks { get; set; }
-
         }
-
-
 
 
         public static SignatureDetails ValidateXMLSignature(string SignedXML)
         {
-
             if (SignedXML == null) throw new ArgumentNullException("SignedXML");
 
             //Make sure the SAPI Library is loaded
             SAPIInit();
             SignatureDetails SigDetails = new SignatureDetails();
-            SigFieldSettings SigFieldSettings = new SigFieldSettingsClass();
-            SigFieldInfo SignatureFieldInfo = new SigFieldInfoClass();
-            SAPICrypt SAPI = new SAPICryptClass();
+            SigFieldSettings SigFieldSettings = new SigFieldSettings();
+            SigFieldInfo SignatureFieldInfo = new SigFieldInfo();
+            SAPICrypt SAPI = new SAPICrypt();
             SigFieldHandle hField = null;
             int rc;
 
-            SESHandle hSession = new SESHandleClass();
+            SESHandle hSession = new SESHandle();
             if ((rc = SAPI.HandleAcquire(out hSession)) != 0)
             {
                 throw new Exception(string.Format(
                     "Memory allocation error (#{0})", rc.ToString("X")));
             }
 
-            SAPIContext ctxValidateSignature = new SAPIContextClass();
+            SAPIContext ctxValidateSignature = new SAPIContext();
             int num = 0;
             if ((rc = SAPI.SignatureFieldEnumInit(hSession, ctxValidateSignature, SAPI_ENUM_FILE_TYPE.SAPI_ENUM_FILE_XML, SignedXML, 0, ref num)) != 0)
             {
@@ -192,12 +178,6 @@ namespace XMLSign
             SAPI.HandleRelease(hSession);
 
             return SigDetails;
-
         }
-
-
-
-
-
     }
 }
