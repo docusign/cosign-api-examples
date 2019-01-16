@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPIWS_Sample", "SAPIWS_Sample.csproj", "{4F0C8E34-9F44-47C5-B01B-23B6967FB27E}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPIWS_Sample", "SAPIWS_Sample\SAPIWS_Sample.csproj", "{4F0C8E34-9F44-47C5-B01B-23B6967FB27E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

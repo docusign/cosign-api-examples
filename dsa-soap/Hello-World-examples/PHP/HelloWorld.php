@@ -17,7 +17,7 @@ try
 	$dateFormat		= 'dd/MM/yyyy';			// The display format of the date
 	$appearanceMask	= 11;					// Elements to display on the signature field (11 = Graphica image + Signer name + Time)
 	$signatureType	= 'http://arx.com/SAPIWS/DSS/1.0/signature-field-create-sign';	// The actual operation of the Sign Request function
-	$wsdlUrl       	= 'https://prime.cosigntrial.com:8080/sapiws/dss.asmx?WSDL';	// URL to the WSDL file
+	$wsdlUrl       	= 'https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx?WSDL';	// URL to the WSDL file
 	
 	// Read file contents
 	$contents = @file_get_contents($filePath);
@@ -82,7 +82,7 @@ try
 				'ssl' => array(
 					'verify_peer' => true,
 					'cafile' => __DIR__ . '/cacert.pem',
-					'CN_match' => 'prime.cosigntrial.com'
+					'CN_match' => 'prime-dsa-devctr.docusign.net'
 				)
 			)
 		)

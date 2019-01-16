@@ -16,7 +16,7 @@ time_format     = 'hh:mm:ss';           # The display format of the time
 date_format     = 'dd/MM/yyyy';         # The display format of the date
 appearance_mask = 11;                   # Elements to display on the signature field (11 = Graphical image + Signer name + Time)
 signature_type  = 'http://arx.com/SAPIWS/DSS/1.0/signature-field-create-sign';  # The actual operation of the Sign Request function
-wsdl_url        = 'https://prime.cosigntrial.com:8080/sapiws/dss.asmx?WSDL';    # URL to the WSDL file
+wsdl_url        = 'https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx?WSDL';    # URL to the WSDL file
 
 begin
 

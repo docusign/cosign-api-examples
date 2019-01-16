@@ -27,7 +27,7 @@ public class HelloWorld {
     	String dateFormat	 = "dd/MM/yyyy";		// The display format of the date
     	long appearanceMask	 = 11;					// Elements to display on the signature field (11 = Graphical image + Signer name + Time)
     	String signatureType = "http://arx.com/SAPIWS/DSS/1.0/signature-field-create-sign";	// The actual operation of the Sign Request function
-    	String wsdlUrl		 = "https://prime.cosigntrial.com:8080/sapiws/dss.asmx?WSDL";	// URL to the WSDL file
+    	String wsdlUrl		 = "https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx?WSDL";	// URL to the WSDL file
     	
     	try
     	{

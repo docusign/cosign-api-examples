@@ -14,9 +14,9 @@ namespace HelloWorld
             // Custom Values
             string filePath      = "c:/temp/demo.pdf";	// File to sign
             string fileMimeType  = "application/pdf";	// File MIME type
-            string username      = "{signer_username}";		// CoSign account username
-            string password      = "{signer_password}";			// CoSign account password
-            string domain        = "";               	// CoSign account domain
+            string username      = "{signer_username}"; // DSA account username
+            string password      = "{signer_password}";	// DSA account password
+            string domain        = "";               	// DSA account domain
             int sigPageNum       = 1;					// Create signature on the first page
             int sigX             = 145;					// Signature field X location
             int sigY             = 125;					// Signature field Y location
@@ -26,7 +26,7 @@ namespace HelloWorld
             string dateFormat    = "dd/MM/yyyy";		// The display format of the date
             uint appearanceMask  = 11;					// Elements to display on the signature field (11 = Graphical image + Signer name + Time)
             string signatureType = "http://arx.com/SAPIWS/DSS/1.0/signature-field-create-sign";	// The actual operation of the Sign Request function
-            string wsdlUrl       = "https://prime.cosigntrial.com:8080/sapiws/dss.asmx?WSDL";   // URL to the WSDL file
+            string wsdlUrl       = "https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx?WSDL";   // URL to the WSDL file
 
             try
             {

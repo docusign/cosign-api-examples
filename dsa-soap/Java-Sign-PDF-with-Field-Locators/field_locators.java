@@ -19,7 +19,7 @@ import com.arx.sapiws.dss._1.TimeDateFormatType;
 
 public class field_locators {
 	
-	static final String serviceUrl = "https://prime.cosigntrial.com:8080/sapiws/dss.asmx";	// The service URL
+	static final String serviceUrl = "https://prime-dsa-devctr.docusign.net:8080/sapiws/dss.asmx";	// The service URL
 	
 	public static void main(String[] args) throws Exception {
     	
