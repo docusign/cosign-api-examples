@@ -3,7 +3,7 @@ DocuSign Signature Appliance: API Recipes
 
 The DocuSign Signature Appliance supports several APIs. This repo includes example programs for them.
 
-For more information on the APIs, including Hello World examples and reference documentation, please contact your DocuSign Account Executive.
+For more information on the APIs, including Hello World examples and reference documentation, please refer to https://developers.docusign.com/dsa-api.
 
 ## DocuSign Signature Appliance REST API
 - [DSA-Rest-CSharp-Sample](https://github.com/docusign/docusign-signature-appliance-api-recipes/tree/master/dsa-rest/Hello-World-examples/DSARestCsharpSample). Sign a PDF using DSA REST V1.0 from CSharp (VS2017 project).
