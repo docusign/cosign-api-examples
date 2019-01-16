@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using SAPILib;
 
 namespace DOCXsample
 {
-
     //DOCX Sigature Field class
     public class DOCXField
     {
@@ -18,13 +15,11 @@ namespace DOCXsample
             if (sSettings == null || sInfo == null) 
                 return base.ToString();
 
-
             if (sInfo.IsSigned != 0)
                 return sSettings.Name + " - SIGNED";
             else
                 return sSettings.Name + " - NOT SIGNED";
         }
-
 
         //Constructor
         public DOCXField()
@@ -44,20 +39,15 @@ namespace DOCXsample
     //SAPI Functions
     public static class SAPIWrapper
     {
-        
-
         public static SAPICrypt SAPI;
         public static SESHandle hSession;
-
-        private static bool isLoggedIn;
-
 
         //Static Constructor
         static SAPIWrapper()
         {
             try
             {
-                SAPI = new SAPICryptClass();
+                SAPI = new SAPICrypt();
             }
             catch
             {
@@ -78,8 +68,6 @@ namespace DOCXsample
                 System.Windows.Forms.MessageBox.Show("Failed in SAPIHandleAcquire (" + rc.ToString("X") + ")");
                 System.Windows.Forms.Application.Exit();
             }
-
-            isLoggedIn = false;
         }
 
         //SAPILogon
@@ -88,7 +76,6 @@ namespace DOCXsample
             int rc;
             rc = SAPI.Logon(hSession, Username, Domain, Password);
             if (rc != 0) throw new Exception("Failed in Login (" + rc.ToString("X") + ")");
-            isLoggedIn = true;
         }
 
         //SAPILogoff
@@ -97,17 +84,15 @@ namespace DOCXsample
             int rc;
             rc = SAPI.Logoff(hSession);
             if (rc != 0) throw new Exception("Failed in Logoff (" + rc.ToString("X") + ")");
-            isLoggedIn = false;
         }
 
 
         public static DOCXField[] GetSignatureFields(string DocxFile)
         {
-
             int rc;
             int NumOfFields = 0;
 
-            SAPIContext ctxSigField = new SAPIContextClass();
+            SAPIContext ctxSigField = new SAPIContext();
 
             rc = SAPI.SignatureFieldEnumInit(
                 hSession,
@@ -132,7 +117,6 @@ namespace DOCXsample
                 rc = SAPI.SignatureFieldEnumCont(hSession, ctxSigField, out Fields[i].hSigField);
                 if (rc != 0) throw new Exception("Failed in SignatureFieldEnumCont (" + rc.ToString("X") + ")");
 
-
                 //Get Signature Field Details
                 rc = SAPI.SignatureFieldInfoGet(
                     hSession,
@@ -141,7 +125,6 @@ namespace DOCXsample
                     Fields[i].sInfo);
 
                 if (rc != 0) throw new Exception("Failed in SignatureFieldInfoGet (" + rc.ToString("X") + ")");
-
             }
 
             SAPI.ContextRelease(ctxSigField);
@@ -149,22 +132,10 @@ namespace DOCXsample
             return Fields;
         }
 
-
         public static void SignField(DOCXField Field)
         {
-
             int rc = SAPI.SignatureFieldSign(hSession, Field.hSigField, 0);
             if (rc != 0) throw new Exception("Failed in SignatureFieldSign (" + rc.ToString("X") + ")");
-
         }
-
-
-
-
-
-
-
-
-
     }
 }
